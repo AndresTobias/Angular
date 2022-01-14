@@ -10,7 +10,8 @@ export class ProductListComponent {
   products = products;
   
   onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+    window.alert('Se le notificará cuando el producto salga a la venta');
+    window.alert('si es el nokia no se vende');
   }
 
   share() {
