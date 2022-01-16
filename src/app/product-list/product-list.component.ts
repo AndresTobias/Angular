@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { products } from '../products';
+import { Product, products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,7 +8,15 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
   })
 export class ProductListComponent {
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert('Agregado al carrito!');
+  }
+  
   products = products;
+  product: Product | undefined;
+
+  constructor(private cartService: CartService) { }
   
   onNotify() {
     window.alert('Se le notificará cuando el producto salga a la venta');
